@@ -14,7 +14,10 @@
 ## To run locally
 
 ```bash
-  yarn watch # compile assets with webpack
+  # Yarn-watch compiles assets with webpack.
+  # Put that in a separate shell.
+  yarn watch
+  # Save files twice to see changes reflected in your local running app.
   yarn start
 ```
 
