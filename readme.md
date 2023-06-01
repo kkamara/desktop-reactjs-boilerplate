@@ -14,6 +14,7 @@
 ## To run locally
 
 ```bash
+  yarn watch # compile assets with webpack
   yarn start
 ```
 
