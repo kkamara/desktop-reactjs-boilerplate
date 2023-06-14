@@ -6,21 +6,31 @@
 
 ## Installation
 
-* [Node.js](https://nodejs.org/en/)
+* [Node.js](https://nodejs.org/en/) (arrives with [npmjs](https://www.npmjs.com/))
 * [Yarn](https://yarnpkg.com/)
 
 ```bash
-  yarn install # or yarn
+  npm i -g yarn
+  yarn install # and yarn
 ```
 
-## To run locally
+## Usage
 
 ```bash
-  # Yarn-watch compiles assets with webpack.
-  # Put that in a separate shell.
-  yarn watch
-  # Save files twice to see changes reflected in your local running app.
   yarn start
+```
+
+## Building target: your machine
+
+```bash
+  yarn build
+```
+
+## Building target: cross-platform
+
+```bash
+  # --linux --win --mac --x64 --ia32
+  yarn run release
 ```
 
 ## Contributing
