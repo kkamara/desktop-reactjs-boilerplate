@@ -1,66 +1,25 @@
-const { 
-  BrowserWindow, 
-  app,
-  ipcMain,
-  Notification,
-} = require('electron')
-const { join, } = require('node:path')
+import logo from './logo.svg';
+import './App.css';
 
-const inProduction = app.isPackaged
-
-function createWindow() {
-  const win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    backgroundColor: '#fff',
-    webPreferences: {
-      nodeIntegration: false,
-      worldSafeExecuteJavascript: true,
-      contextIsolation: true,
-      preload: join(
-        __dirname, 
-        '../', 
-        'preload.js',
-      ),
-    },
-  })
-
-  win.loadFile(
-    join(
-      __dirname, 
-      '/', 
-      '../', 
-      'index.html',
-    )
-  )
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-if (!inProduction) {
-  require('electron-reload')(__dirname, {
-    electron: join(
-      __dirname, 
-      '../',
-      'node_modules', 
-      '.bin', 
-      'electron',
-    ),
-  })
-}
-
-ipcMain.on('notify', (event, message) => {
-  new Notification({ title: 'Notification', body: message, }).show()
-})
-
-app.whenReady().then(createWindow)
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-  }
-})
+export default App;

@@ -1,43 +1,55 @@
 {
   "name": "desktop-react-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --config webpack.common.js --watch",
-    "start": "electron src/app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kkamara/node-react-app.git"
-  },
   "author": "https://github.com/kkamara",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/kkamara/node-react-app/issues"
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "build": {
+    "appId": "<com.desktop-react-boilerplate>"
   },
-  "homepage": "https://github.com/kkamara/node-react-app#readme",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "npm run build && electron-builder --linux --win --mac --x64 --ia32 --publish never",
+    "build": "npm run react-build && npm run electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "electron": "^25.0.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanitize": "^2.1.0",
-    "sequelize": "^6.13.0",
-    "sqlite3": "^5.1.6"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.1",
-    "@babel/preset-env": "^7.22.4",
-    "@babel/preset-react": "^7.22.3",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.8.1",
-    "electron-reload": "^2.0.0-alpha.1",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.3.1",
-    "style-loader": "^3.3.3",
-    "webpack": "^5.85.0",
-    "webpack-cli": "^5.1.1"
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^25.1.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
