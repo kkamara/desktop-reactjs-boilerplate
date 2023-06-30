@@ -4,6 +4,10 @@
 
 (01 Jun 23) Electronjs, Reactjs.
 
+## Download
+
+* [macOs](https://github.com/kkamara/desktop-react-boilerplate/releases).
+
 ## Installation
 
 * [Node.js](https://nodejs.org/en/) (arrives with [npmjs](https://www.npmjs.com/))
