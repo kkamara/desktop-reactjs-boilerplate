@@ -1,6 +1,6 @@
 <img src="https://github.com/kkamara/useful/blob/main/drb.png?raw=true" alt="drb.png" />
 
-# desktop-react-boilerplate [![Run CI](https://github.com/kkamara/node-react-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/kkamara/node-react-boilerplate/actions/workflows/node.js.yml)
+# desktop-react-boilerplate
 
 (01 Jun 23) Electronjs, Reactjs.
 
