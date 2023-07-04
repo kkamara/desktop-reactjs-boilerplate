@@ -20,6 +20,8 @@
 
 ## Usage
 
+Build refreshes on project file save.
+
 ```bash
   yarn start
 ```
