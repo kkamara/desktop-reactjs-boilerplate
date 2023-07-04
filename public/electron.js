@@ -17,7 +17,7 @@ function createWindow() {
     });
 
     if (inProduction) {
-        // index.html?exampleArg=test for desktop multi-window-support.
+        // index.html?exampleArg=test for desktop reactjs multi-window-support.
         mainWindow.loadURL(`file://${path.join(__dirname, '../build/index.html')}`);
     } else {
         mainWindow.loadURL('http://localhost:3000');
