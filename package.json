@@ -1,7 +1,7 @@
 {
   "name": "desktop-react-boilerplate",
   "description": "Electronjs, Reactjs with desktop multi-window support.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "https://github.com/kkamara",
   "private": true,
   "main": "public/electron.js",
