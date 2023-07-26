@@ -2,7 +2,7 @@
 
 # desktop-react-boilerplate
 
-(01 Jun 23) Electronjs, Reactjs.
+(01 Jun 2023) Electronjs, Reactjs.
 
 ## Download
 
