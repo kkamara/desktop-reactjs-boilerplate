@@ -10,12 +10,12 @@
 
 ## Installation
 
-* [Node.js](https://nodejs.org/en/) (arrives with [npmjs](https://www.npmjs.com/))
+* [NodeJS v14.21.3](https://nodejs.org/en/blog/release/v14.21.3) (arrives with [NPM](https://www.npmjs.com/))
 * [Yarn](https://yarnpkg.com/)
 
 ```bash
-  npm i -g yarn
-  yarn install # and yarn
+  npm install -g yarn
+  yarn install
 ```
 
 ## Usage
