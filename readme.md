@@ -1,12 +1,12 @@
 <img src="https://github.com/kkamara/useful/blob/main/drb.png?raw=true" alt="drb.png" />
 
-# desktop-react-boilerplate
+# Desktop ReactJS Boilerplate
 
-(01 Jun 2023) Electronjs, Reactjs.
+(01-Jun-2023) Electronjs, Reactjs with desktop multi-window support.
 
 ## Download
 
-* [macOs](https://github.com/kkamara/desktop-react-boilerplate/releases).
+* [macOs](https://github.com/kkamara/desktop-reactjs-boilerplate/releases).
 
 ## Installation
 
