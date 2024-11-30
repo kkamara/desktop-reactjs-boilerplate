@@ -2,6 +2,7 @@ const electron = require('electron');
 const path = require('path');
 
 const app = electron.app;
+const ipcMain = electron.ipcMain;
 const BrowserWindow = electron.BrowserWindow;
 
 const inProduction = app.isPackaged;
