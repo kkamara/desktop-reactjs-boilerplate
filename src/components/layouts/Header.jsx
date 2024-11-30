@@ -1,59 +1,9 @@
-import React, { useEffect, } from 'react'
-import { useDispatch, } from "react-redux"
-import { useSelector, } from 'react-redux'
+import React from 'react'
 import { Link, } from 'react-router-dom'
-import { authorize, } from "../../redux/actions/authActions"
 
 import "./Header.scss"
 
-export default function Header(props) {
-  const dispatch = useDispatch()
-  const authResponse = useSelector(state=>state.auth)
-
-  useEffect(() => {
-    dispatch(authorize())
-  }, [])
-
-  const renderNavLinks = () => {
-    if(authResponse.data) {
-      return <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          User
-        </a>
-        <ul className="dropdown-menu">
-          <li>
-            <Link
-              className="dropdown-item" 
-              to="/user/logout"
-            >
-              Sign Out
-            </Link>
-          </li>
-        </ul>
-      </li>
-    } else {
-      return <>
-        <li className="nav-item">
-          <Link
-            className="nav-link active" 
-            aria-current="page" 
-            to="/user/login"
-          >
-            Sign In
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            className="nav-link active" 
-            aria-current="page" 
-            to="/user/register"
-          >
-            Register
-          </Link>
-        </li>
-      </>
-    }
-  }
+export default function Header() {
   return <nav className="navbar navbar-expand-lg mb-4 bg-primary" data-bs-theme="dark">
     <div className="container">
       <Link className="navbar-brand" to="/">
@@ -69,7 +19,24 @@ export default function Header(props) {
           </li>
         </ul>
         <ul className="navbar-nav">
-          {renderNavLinks()}
+          <li className="nav-item">
+            <Link
+              className="nav-link active" 
+              aria-current="page" 
+              to="#"
+            >
+              Sign In
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="nav-link active" 
+              aria-current="page" 
+              to="#"
+            >
+              Register
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
