@@ -1,6 +1,6 @@
 {
   "name": "desktop-reactjs-boilerplate",
-  "description": "(01-Jun-2023) Electronjs, Reactjs with desktop multi-window support.",
+  "description": "(01-Jun-2023) ElectronJS, ReactJS 18 with desktop multi-window support.",
   "version": "1.1.1",
   "author": "https://www.github.com/kkamara",
   "private": true,

@@ -2,7 +2,7 @@
 
 # Desktop ReactJS Boilerplate
 
-(01-Jun-2023) Electronjs, Reactjs with desktop multi-window support.
+(01-Jun-2023) ElectronJS, ReactJS 18 with desktop multi-window support.
 
 ## Download
 
