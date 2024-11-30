@@ -7,6 +7,11 @@ const BrowserWindow = electron.BrowserWindow;
 const inProduction = app.isPackaged;
 
 let mainWindow;
+const preload = path.join(
+    __dirname, 
+    '../',
+    'preload.js',
+);
 
 function createWindow() {
     mainWindow = new BrowserWindow({ 
@@ -14,6 +19,7 @@ function createWindow() {
         height: 680, 
         webPreferences: {
             devTools: inProduction ? false : true,
+            preload,
         },
     });
 
