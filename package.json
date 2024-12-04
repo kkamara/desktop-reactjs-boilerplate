@@ -1,7 +1,7 @@
 {
   "name": "desktop-reactjs-boilerplate",
   "description": "(01 Jun 2023) ElectronJS, ReactJS 16.",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "author": "https://www.github.com/kkamara",
   "private": true,
   "main": "public/electron.js",
