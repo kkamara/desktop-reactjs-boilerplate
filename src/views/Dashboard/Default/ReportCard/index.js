@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ReportCard = (props) => {
-    const { primary, secondary, iconPrimary, color, footerData, iconFooter } = props;
+    const { primary, secondary, iconPrimary, color, footerData, iconFooter, childWindow: cw } = props;
     const classes = useStyles();
 
     const IconPrimary = iconPrimary;
@@ -24,6 +24,26 @@ const ReportCard = (props) => {
 
     const IconFooter = iconFooter;
     const footerIcon = iconFooter ? <IconFooter /> : null;
+
+    const childWindow = cw ? true : false;
+
+    const openChildWindow = () => {
+        window.api.send("openChildWindow");
+    }
+
+    const renderChildWindowArea = () => {
+        if (!childWindow) {
+            return null;
+        }
+        return <>
+            <button
+                onClick={openChildWindow}
+                className="btn btn-primary"
+            >
+                Open Child Window
+            </button>
+        </>
+    }
 
     return (
         <Card>
@@ -36,6 +56,7 @@ const ReportCard = (props) => {
                         <Typography variant="subtitle1" className={classes.secondary}>
                             {secondary}
                         </Typography>
+                        {renderChildWindowArea()}
                     </Grid>
                     <Grid item>
                         <Typography variant="h2" style={{ color: color }}>

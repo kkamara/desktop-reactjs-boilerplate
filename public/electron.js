@@ -3,10 +3,16 @@ const path = require('path');
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const ipcMain = electron.ipcMain;
 
 const inProduction = app.isPackaged;
 
 let mainWindow;
+const preload = path.join(
+    __dirname, 
+    '../',
+    'preload.js',
+);
 
 function createWindow() {
     mainWindow = new BrowserWindow({ 
@@ -14,6 +20,7 @@ function createWindow() {
         height: 680, 
         webPreferences: {
             devTools: inProduction ? false : true,
+            preload,
         },
     });
 
@@ -27,6 +34,42 @@ function createWindow() {
 
     mainWindow.on('closed', () => (mainWindow = null));
 }
+
+// Function to create child window of parent one
+function createChildWindow() {
+    childWindow = new BrowserWindow({
+        width: 400,
+        height: 400,
+        modal: true,
+        show: false,
+        parent: mainWindow,
+        webPreferences: {
+            preload,
+            nodeIntegration: true,
+            contextIsolation: true,
+            enableRemoteModule: true,
+        },
+    });
+    
+    childWindow.loadURL(`file://${path.join(
+        __dirname, 
+        '../', 
+        'views/childWindow.html',
+    )}`);
+    
+    childWindow.once('ready-to-show', () => {
+        childWindow.show();
+    });
+}
+
+ipcMain.on('openChildWindow', (event, arg) => {
+    createChildWindow();
+});
+
+ipcMain.on('closeChildWindow', (event, arg) => {
+    childWindow.close();
+    // win.webContents.send("openChildWindow", responseObj);
+});
 
 app.on('ready', createWindow);
 
