@@ -6,7 +6,7 @@
 
 ## Download
 
-* [macOs](https://github.com/kkamara/desktop-react-boilerplate/releases).
+* [Windows](https://github.com/kkamara/desktop-react-boilerplate/releases).
 
 ## Installation
 
