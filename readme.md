@@ -1,43 +1,34 @@
-<img src="https://github.com/kkamara/useful/blob/main/drb.png?raw=true" alt="drb.png" />
+<img src="https://codedthemes.com/wp-content/uploads/edd/2022/05/Materially-ReactJS-Admin-Dashboard.webp" alt="Materially-ReactJS-Admin-Dashboard.webp" width=""/>
 
-# desktop-reactjs-boilerplate
+<img src="https://github.com/kkamara/useful/blob/main/reactjs-boilerplate.png?raw=true" alt="reactjs-boilerplate.png" width=""/>
 
-(01 Jun 2023) ElectronJS, ReactJS 16.
+# reactjs-boilerplate
 
-## Download
+:electron: (2022) ReactJS 18 with Redux.
 
-* [Windows](https://github.com/kkamara/desktop-react-boilerplate/releases).
+## Requirements
+
+* [NodeJS](https://nodejs.org/en/).
 
 ## Installation
 
-* [NodeJS v14.21.3](https://nodejs.org/en/blog/release/v14.21.3) (arrives with [npmjs](https://www.npmjs.com/))
-* [Yarn](https://yarnpkg.com/)
-
 ```bash
-  npm i -g yarn
-  yarn install # and yarn
+npm install
 ```
 
 ## Usage
 
-Build refreshes on project file save.
-
 ```bash
-  yarn start
+npm start
 ```
 
-## Building target: your machine
+## Misc
 
-```bash
-  yarn build
-```
+[See PHP ReactJS Boilerplate](https://github.com/kkamara/php-reactjs-boilerplate).
 
-## Building target: cross-platform
+[See Python ReactJS Boilerplate](https://github.com/kkamara/python-reactjs-boilerplate).
 
-```bash
-  # --linux --win --mac --x64 --ia32
-  yarn run release
-```
+[See NodeJS ReactJS Boilerplate](https://github.com/kkamara/nodejs-reactjs-boilerplate).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
