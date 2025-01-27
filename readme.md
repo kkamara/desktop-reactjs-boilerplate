@@ -2,9 +2,13 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/reactjs-boilerplate.png?raw=true" alt="reactjs-boilerplate.png" width=""/>
 
-# reactjs-boilerplate
+# desktop-reactjs-boilerplate
 
 :electron: (2022) ReactJS 18 with Redux.
+
+## Download
+
+* [Windows](https://github.com/kkamara/desktop-react-boilerplate/releases).
 
 ## Requirements
 
@@ -20,6 +24,19 @@ npm install
 
 ```bash
 npm start
+```
+
+## Building target: your machine
+
+```bash
+  npm run build
+```
+
+## Building target: cross-platform
+
+```bash
+  # --linux --win --mac --ia32 --x64
+  npm run release
 ```
 
 ## Misc
