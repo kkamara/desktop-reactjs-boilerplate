@@ -10,33 +10,27 @@
 
 ## Installation
 
-* [NodeJS v14.21.3](https://nodejs.org/en/blog/release/v14.21.3) (arrives with [npmjs](https://www.npmjs.com/))
-* [Yarn](https://yarnpkg.com/)
-
-```bash
-  npm i -g yarn
-  yarn install # and yarn
-```
+* [NodeJS v14.21.3](https://nodejs.org/en/blog/release/v14.21.3) (arrives with [npmjs](https://www.npmjs.com/)).
 
 ## Usage
 
 Build refreshes on project file save.
 
 ```bash
-  yarn start
+  npm start
 ```
 
 ## Building target: your machine
 
 ```bash
-  yarn build
+  npm run build
 ```
 
 ## Building target: cross-platform
 
 ```bash
   # --linux --win --mac --ia32 --x64
-  yarn run release
+  npm run release
 ```
 
 ## Contributing
