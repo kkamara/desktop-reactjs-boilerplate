@@ -5,6 +5,7 @@ import $ from'jquery';
 import Popper from'popper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import "./pulse_bootstrap.css"
 
 import App from './App';
 
