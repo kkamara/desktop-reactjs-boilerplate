@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route, Redirect, useLocation, } from 'react-router-dom';
 
 import Header from './components/layouts/Header';
-import Footer from './components/layouts/Footer';
 
 import Home from "./components/pages/HomeComponent";
 
@@ -23,7 +22,6 @@ const Routes = () => {
                 </Route>
                 <Route path="/*" element={ <Redirect to="/" /> }/>
             </Switch>
-            <Footer/>
         </>
     );
 };
