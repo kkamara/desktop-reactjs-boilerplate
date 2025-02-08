@@ -1,23 +1,30 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Switch, Route, Redirect, useLocation, } from 'react-router-dom';
+
+import Header from './components/layouts/Header';
+import Footer from './components/layouts/Footer';
+
+import Home from "./components/pages/HomeComponent";
 
 const Routes = () => {
     const location = useLocation();
 
     return (
-        <Switch>
-            <Route path={[ '/', ]}>
-                <MainLayout>
+        <>
+            <Header/>
+            <Switch>
+                <Route path={[ '/', ]}>
                     <Switch location={location} key={location.pathname}>
                         <Route 
                             path="/" 
-                            component={DashboardDefault} 
+                            component={Home} 
                         />
                     </Switch>
-                </MainLayout>
-            </Route>
-            <Route path="/*" element={ <Redirect to="/" /> }/>
-        </Switch>
+                </Route>
+                <Route path="/*" element={ <Redirect to="/" /> }/>
+            </Switch>
+            <Footer/>
+        </>
     );
 };
 
