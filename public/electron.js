@@ -54,7 +54,7 @@ function createChildWindow() {
     childWindow.loadURL(`file://${path.join(
         __dirname, 
         '../', 
-        'views/childWindow.html',
+        'src/views/childWindow.html',
     )}`);
     
     childWindow.once('ready-to-show', () => {
