@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
+import { APP_NAME, } from '../../constants';
 
 import "./Header.scss";
 
@@ -7,7 +8,7 @@ export default function Header(props) {
   return <nav className="navbar navbar-expand-lg mb-4 bg-primary" data-bs-theme="dark">
     <div className="container">
       <Link className="navbar-brand" to="/">
-        Desktop ReactJS Boilerplate
+        {APP_NAME}
       </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

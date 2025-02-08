@@ -1,0 +1,1 @@
+export const APP_NAME = "Desktop ReactJS Boilerplate";
