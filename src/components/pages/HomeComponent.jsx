@@ -1,7 +1,5 @@
 import React from 'react';
 
-import "./HomeComponent.scss";
-
 export default function HomeComponent() {
   const openChildWindow = () => {
       window.api.send("openChildWindow");

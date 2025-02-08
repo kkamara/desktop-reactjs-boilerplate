@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, } from 'react-router-dom';
 import { APP_NAME, } from '../../constants';
 
-import "./Header.scss";
-
 export default function Header(props) {
   return <nav className="navbar navbar-expand-lg mb-4 bg-primary" data-bs-theme="dark">
     <div className="container">
