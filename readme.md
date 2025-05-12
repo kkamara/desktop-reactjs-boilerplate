@@ -4,10 +4,6 @@
 
 (01 Jun 2023) ElectronJS, ReactJS 16.
 
-## Download
-
-* [Windows](https://github.com/kkamara/desktop-react-boilerplate/releases).
-
 ## Installation
 
 * [NodeJS](https://nodejs.org) (arrives with [npmjs](https://www.npmjs.com)).
