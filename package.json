@@ -15,10 +15,10 @@
     "react-test": "react-scripts test --env=jsdom",
     "react-eject": "react-scripts eject",
     "electron-build": "cross-env NODE_OPTIONS=--openssl-legacy-provider electron-builder",
-    "release": "npm run build && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-builder --linux --win --mac --x64 --ia32 --publish never",
+    "release": "yarn build && cross-env NODE_OPTIONS=--openssl-legacy-provider electron-builder --linux --win --mac --x64 --ia32 --publish never",
     "builder:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider electron-builder --win --x64 --publish never",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run react-build && npm run builder:build",
-    "start": "concurrently \"cross-env NODE_OPTIONS=--openssl-legacy-provider BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider yarn react-build && yarn builder:build",
+    "start": "concurrently \"cross-env NODE_OPTIONS=--openssl-legacy-provider BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "license": "BSD-3-Clause",
   "dependencies": {

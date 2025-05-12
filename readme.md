@@ -12,25 +12,29 @@
 
 * [NodeJS](https://nodejs.org) (arrives with [npmjs](https://www.npmjs.com)).
 
+```bash
+  npm install --global yarn
+```
+
 ## Usage
 
 Build refreshes on project file save.
 
 ```bash
-  npm start
+  yarn start
 ```
 
 ## Building target: your machine
 
 ```bash
-  npm run build
+  yarn build
 ```
 
 ## Building target: cross-platform
 
 ```bash
   # --linux --win --mac --ia32 --x64
-  npm run release
+  yarn release
 ```
 
 ## Contributing
