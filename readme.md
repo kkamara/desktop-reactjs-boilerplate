@@ -10,7 +10,7 @@
 
 ## Installation
 
-* [NodeJS v14.21.3](https://nodejs.org/en/blog/release/v14.21.3) (arrives with [npmjs](https://www.npmjs.com/)).
+* [NodeJS](https://nodejs.org) (arrives with [npmjs](https://www.npmjs.com)).
 
 ## Usage
 
