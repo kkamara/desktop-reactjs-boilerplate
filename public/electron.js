@@ -18,7 +18,7 @@ function createWindow() {
         width: 900, 
         height: 680, 
         webPreferences: {
-            devTools: true,
+            devTools: inProduction ? false : true,
             preload,
         },
     });
