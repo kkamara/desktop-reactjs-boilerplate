@@ -1,3 +1,4 @@
+"use strict";
 const electron = require('electron');
 const path = require('path');
 
@@ -9,82 +10,85 @@ const inProduction = app.isPackaged;
 
 let mainWindow, childWindow;
 const preload = path.join(
-    __dirname,
-    'preload.js',
+  __dirname,
+  'preload.js',
 );
 
 function createWindow() {
-    mainWindow = new BrowserWindow({ 
-        width: 900, 
-        height: 680, 
-        webPreferences: {
-            devTools: inProduction ? false : true,
-            preload,
-        },
-    });
+  mainWindow = new BrowserWindow({ 
+    width: 900, 
+    height: 680, 
+    webPreferences: {
+      devTools: inProduction ? false : true,
+      preload,
+    },
+  });
 
-    if (inProduction) {
-        // index.html?exampleArg=test
-        mainWindow.loadURL(`file://${path.join(__dirname, '../build/index.html')}`);
-    } else {
-        // :3000?exampleArg=foobarbaz
-        mainWindow.loadURL('http://localhost:3000');
-    }
+  if (inProduction) {
+    // index.html?exampleArg=test
+    mainWindow.loadURL(`file://${path.join(
+        __dirname,
+        '../build/index.html',
+    )}`);
+  } else {
+    // :3000?exampleArg=foobarbaz
+    mainWindow.loadURL('http://localhost:3000');
+  }
 
-    mainWindow.on('closed', () => (mainWindow = null));
+  mainWindow.on('closed', () => (mainWindow = null));
 }
 
 // Function to create child window of parent one
 function createChildWindow() {
-    childWindow = new BrowserWindow({
-        width: 400,
-        height: 400,
-        modal: true,
-        show: false,
-        parent: mainWindow,
-        webPreferences: {
-            preload,
-        },
-    });
-    
-    childWindow.loadURL(`file://${path.join(
-        __dirname,
-        'views/childWindow.html',
-    )}`);
-    
-    childWindow.once('ready-to-show', () => {
-        childWindow.show();
-    });
+  childWindow = new BrowserWindow({
+    width: 400,
+    height: 400,
+    modal: true,
+    show: false,
+    parent: mainWindow,
+    webPreferences: {
+      preload,
+    },
+  });
+
+  childWindow.loadURL(`file://${path.join(
+    __dirname,
+    'views/childWindow.html',
+  )}`);
+
+  childWindow.once('ready-to-show', () => {
+    childWindow.show();
+  });
 }
 
 ipcMain.on('openChildWindow', (event, arg) => {
-    createChildWindow();
-    // mainWindow.webContents.send(
-    //     "fromMain",
-    //     {"message": "Hello from fromMain"},
-    // );
+  createChildWindow();
+//   mainWindow.webContents.send(
+//     "fromMain",
+//     {"message": "Hello from fromMain"},
+//   );
 });
 
 ipcMain.on('closeChildWindow', (event, arg) => {
-    childWindow.close();
+  childWindow.close();
 });
 
 app.on('ready', createWindow);
 
 process.on("uncaughtException", err => {
-    if (false === inProduction) {
-        console.log(err);
-    }
+  if (false === inProduction) {
+    console.log(err);
+  }
 });
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
 
 app.on('activate', () => {
-    if (mainWindow === null) {
-        createWindow();
-    }
+  if (mainWindow === null) {
+    createWindow();
+  }
 });
